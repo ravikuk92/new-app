@@ -4,7 +4,7 @@ export default function App() {
   const [message, setMessage] = useState('Loading...')
 
   useEffect(() => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://backend:3000'
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3000'
     fetch(`${backendUrl}/api/hello`)
       .then(res => res.json())
       .then(data => setMessage(data.message))
