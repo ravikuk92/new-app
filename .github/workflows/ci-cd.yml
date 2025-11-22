@@ -61,11 +61,14 @@ jobs:
           echo "Updating k8s manifests to use images tagged with ${GITHUB_SHA}"
           sha=${GITHUB_SHA}
           user=${{ secrets.DOCKERHUB_USERNAME }}
-          # Update frontend
+          # Update frontend - match any existing tag
+          sed -i "s|${user}/frontend:[a-f0-9]*|${user}/frontend:${sha}|g" k8s/frontend-deployment.yaml || true
           sed -i "s|your-dockerhub-username/frontend:IMAGE_TAG|${user}/frontend:${sha}|g" k8s/frontend-deployment.yaml || true
-          # Update backend
+          # Update backend - match any existing tag
+          sed -i "s|${user}/backend:[a-f0-9]*|${user}/backend:${sha}|g" k8s/backend-deployment.yaml || true
           sed -i "s|your-dockerhub-username/backend:IMAGE_TAG|${user}/backend:${sha}|g" k8s/backend-deployment.yaml || true
-          # Update db
+          # Update db - match any existing tag
+          sed -i "s|${user}/db:[a-f0-9]*|${user}/db:${sha}|g" k8s/db-deployment.yaml || true
           sed -i "s|your-dockerhub-username/db:IMAGE_TAG|${user}/db:${sha}|g" k8s/db-deployment.yaml || true
 
       - name: Create Pull Request with manifest updates
