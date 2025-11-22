@@ -9,7 +9,7 @@ This repository contains a minimal full-stack example:
 - Kubernetes manifests to run on Docker Desktop Kubernetes
 - GitHub Actions workflow to build and push images to Docker Hub and optionally deploy to Kubernetes
 
-Important: replace the placeholder image names in `k8s/*` with your Docker Hub username or set the `DOCKERHUB_USERNAME` secret in GitHub Actions (see below).
+Important: replace the placeholder image names in `k8s/*` with your Docker Hub username or set the `DOCKERHUB_USERNAME` secret in GitHub Actions (see below)..
 
 Quick overview
 1. Create two GitHub secrets in your repository settings:
