@@ -73,5 +73,8 @@ jobs:
           title: "ci: update k8s image tags to ${{ github.sha }}"
           body: |
             Auto-generated update of k8s image tags by CI.
+            
+            This PR updates all K8s deployment manifests with the latest Docker image tags.
           labels: |
             ci, automated
+          delete-branch: true
