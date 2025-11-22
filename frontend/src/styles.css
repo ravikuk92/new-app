@@ -1,0 +1,8 @@
+.app {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  padding: 2rem;
+}
+
+h1 {
+  color: #0f62fe;
+}
