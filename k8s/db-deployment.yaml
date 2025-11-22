@@ -16,7 +16,7 @@ spec:
       containers:
         - name: db
           # image will be updated by CI to use the commit SHA tag
-          image: your-dockerhub-username/db:IMAGE_TAG
+          image: ravik92/db:6c83fd8a7ba9d756d4c914938ceecd5742152895
           ports:
             - containerPort: 5432
           env:

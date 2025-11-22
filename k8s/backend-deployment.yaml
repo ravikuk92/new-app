@@ -16,7 +16,7 @@ spec:
       containers:
         - name: backend
           # image will be updated by CI to use the commit SHA tag
-          image: your-dockerhub-username/backend:IMAGE_TAG
+          image: ravik92/backend:6c83fd8a7ba9d756d4c914938ceecd5742152895
           ports:
             - containerPort: 3000
           env:
