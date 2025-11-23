@@ -26,4 +26,25 @@ app.get('/api/hello', async (req, res) => {
   }
 })
 
+app.post('/api/feedback', async (req, res) => {
+  try {
+    const { name, password, feedback } = req.body
+    if (!name || !password || !feedback) {
+      return res.status(400).json({ error: 'Missing required fields' })
+    }
+    const result = await pool.query(
+      'INSERT INTO feedback (name, password, feedback) VALUES ($1, $2, $3) RETURNING id',
+      [name, password, feedback]
+    )
+    return res.json({ 
+      success: true, 
+      message: 'Feedback saved successfully',
+      id: result.rows[0].id 
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).json({ error: 'Failed to save feedback' })
+  }
+})
+
 app.listen(3000, () => console.log('Backend listening on :3000'))
