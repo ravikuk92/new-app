@@ -16,7 +16,7 @@ spec:
       containers:
         - name: backend
           # image will be updated by CI to use the commit SHA tag
-          image: ravik92/backend:950639845825d59605381d645254ee52f1c051c4
+          image: ravik92/backend:22d26c0b1d5fba6ba2495a7bdc84c7a9d3db8ce6
           ports:
             - containerPort: 3000
           env:
