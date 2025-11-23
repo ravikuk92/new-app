@@ -16,7 +16,7 @@ spec:
       containers:
         - name: frontend
           # image will be updated by CI to use the commit SHA tag
-          image: ravik92/frontend:dd98635c4a066bbd65aff9c45138aec8b1529c47
+          image: ravik92/frontend:950639845825d59605381d645254ee52f1c051c4
           ports:
             - containerPort: 80
 
