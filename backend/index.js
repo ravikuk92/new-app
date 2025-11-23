@@ -47,4 +47,19 @@ app.post('/api/feedback', async (req, res) => {
   }
 })
 
+app.get('/api/feedback', async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT id, name, feedback, created_at FROM feedback ORDER BY created_at DESC'
+    )
+    return res.json({ 
+      success: true, 
+      data: result.rows 
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).json({ error: 'Failed to retrieve feedback' })
+  }
+})
+
 app.listen(3000, () => console.log('Backend listening on :3000'))
