@@ -16,7 +16,7 @@ spec:
       containers:
         - name: db
           # image will be updated by CI to use the commit SHA tag
-          image: ravik92/db:9de5196a4e4c8d5be2f7402ce5edc2d5a22203cc
+          image: ravik92/db:dd98635c4a066bbd65aff9c45138aec8b1529c47
           ports:
             - containerPort: 5432
           env:
